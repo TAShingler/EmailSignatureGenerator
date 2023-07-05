@@ -1,0 +1,209 @@
+<!--/ Business Card View /-->
+                <Viewbox Grid.Column="0" Width="384" Height="192" Margin="20,0">
+                    <Canvas Width="384" Height="192">
+                        <!--<Path Data="M 0,192 2,194 H 338 V 2 L 336,0 Z" Fill="#7F000000" />-->
+                        <Rectangle Canvas.Left="2" Canvas.Top="2" Width="384" Height="192" Fill="#7F000000"  />
+                    </Canvas>
+                </Viewbox>
+                <!--<Grid Grid.Column="0" Width="336" Height="192"-->
+                <Border x:Name="bCardOuterBorder" Grid.Column="0" Width="384" Height="192" Margin="20,0" BorderThickness="0" BorderBrush="White" Background="White" VerticalAlignment="Center" CornerRadius="4">
+                    <Grid x:Name="bCardOuterGrid" Background="{Binding ElementName=bCardOuterBorder,Path=Background}" SnapsToDevicePixels="True">
+                        <!--<Border BorderThickness="1" BorderBrush="Red" Visibility="Collapsed" />-->
+                        <Grid Background="Transparent" Margin="8,12" SnapsToDevicePixels="False">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Viewbox Grid.Column="0" Width="96" Height="196" Child="{StaticResource HcsbLogo}" SnapsToDevicePixels="False">
+                                <!--<Image Grid.Column="0" Source="/Images/logo_sig.png" />-->
+                                <!--/ Width="132" /-->
+                            </Viewbox>
+                            <TextBlock Grid.Column="1" Width="2" Background="#FF7D2933" Margin="8,0" SnapsToDevicePixels="True" />
+                            <Grid Grid.Column="2" VerticalAlignment="Stretch" SnapsToDevicePixels="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Name="spacerRow1" Height=".001*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition x:Name="spacerRow2" Height="*" MaxHeight="12" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition x:Name="spacerRow3" Height=".001*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="24" MaxWidth="24" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <!--/ Emp. Name, Title, NMLS/Certs/etc. /-->
+                                <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" Height="24" Text="{Binding ElementName=textBoxEmployeeName,Path=Text}" Background="Green" FontSize="16.8" FontWeight="Bold" Foreground="#FF7D2933" FontFamily="Segoe UI" SnapsToDevicePixels="False" />
+                                    <TextBlock Grid.Row="1" Height="16" Text="{Binding ElementName=textBoxEmployeeTitle,Path=Text}" Background="DarkOliveGreen" FontSize="12" FontFamily="Segoe UI Semibold" FontWeight="Normal" SnapsToDevicePixels="False" />
+                                    <TextBlock Grid.Row="2" Height="14" Text="{Binding ElementName=textBoxEmployeeCredentials,Path=Text}" Background="Green" FontSize="10" SnapsToDevicePixels="False" Visibility="{Binding ElementName=checkBoxEmployeeCredentials,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}" FontFamily="Segoe UI" />
+                                </Grid>-->
+                                <StackPanel Grid.Row="1" 
+                                            Grid.Column="0" 
+                                            Grid.ColumnSpan="2" 
+                                            Orientation="Vertical" 
+                                            SnapsToDevicePixels="False">
+                                    <TextBlock Height="24" 
+                                               Text="{Binding ElementName=textBoxEmployeeName,Path=Text}" 
+                                               VerticalAlignment="Center" 
+                                               FontSize="17" 
+                                               FontWeight="Bold" 
+                                               Foreground="#FF7D2933" 
+                                               FontFamily="Segoe UI" 
+                                               SnapsToDevicePixels="False" />
+                                    <TextBlock Height="16"
+                                               Text="{Binding ElementName=textBoxEmployeeTitle,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontSize="12"
+                                               FontFamily="Segoe UI Semibold"
+                                               FontWeight="Normal"
+                                               SnapsToDevicePixels="False" />
+                                    <TextBlock Height="14"
+                                               Text="{Binding ElementName=textBoxEmployeeCredentials,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontSize="10"
+                                               SnapsToDevicePixels="False"
+                                               Visibility="{Binding ElementName=checkBoxEmployeeCredentials,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                               FontFamily="Segoe UI" />
+                                </StackPanel>
+
+                                <!--/ Emp. Email /-->
+                                <!--<Image Grid.Row="2" Grid.Column="0" Width="9.6" Height="9.6" Source="/Images/mail_2_Vector.png" />-->
+                                <Viewbox Grid.Row="3"
+                                         Grid.Column="0"
+                                         Width="12"
+                                         Height="12"
+                                         VerticalAlignment="Center"
+                                         Child="{StaticResource EmailIcon1}"
+                                         SnapsToDevicePixels="True" />
+                                <TextBlock x:Name="textBlockEmployeeEmail" Grid.Row="3"
+                                           Grid.Column="1"
+                                           Height="14"
+                                           Text="{Binding ElementName=textBoxEmployeeEmail,Path=Text}"
+                                           VerticalAlignment="Center"
+                                           FontFamily="Segoe UI Semibold"
+                                           FontSize="10"
+                                           Margin="0,1"
+                                           SnapsToDevicePixels="False" />
+                                <!--Text="{Binding ElementName=textBoxEmployeeEmail,Path=Text}"-->
+
+                                <!--/ Emp. Phone /-->
+                                <!--<Image Grid.Row="3" Grid.Column="0" Width="9.6" Height="9.6" Source="/Images/phone_2_Vector.png" />-->
+                                <Viewbox Grid.Row="4"
+                                         Grid.Column="0"
+                                         Width="12"
+                                         Height="12"
+                                         VerticalAlignment="Center"
+                                         Child="{StaticResource PhoneIcon}"
+                                         SnapsToDevicePixels="True" />
+                                <!--<Grid Grid.Row="4" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" Height="15" Text="{Binding ElementName=textBoxEmployeePhone,Path=Text}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="11" SnapsToDevicePixels="False" />
+                                    <TextBlock Grid.Row="1" Height="15" Text="{Binding ElementName=textBoxEmployeeDirectLine,Path=Text}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="11" SnapsToDevicePixels="False" Visibility="{Binding ElementName=checkBoxEmployeeDirectLine,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                </Grid>-->
+                                <StackPanel Grid.Row="4"
+                                            Grid.Column="1"
+                                            Orientation="Vertical"
+                                            Margin="0,1"
+                                            SnapsToDevicePixels="False">
+                                    <TextBlock Height="14"
+                                               Text="{Binding ElementName=textBoxEmployeePhone,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontFamily="Segoe UI Semibold"
+                                               FontSize="10"
+                                               SnapsToDevicePixels="False" />
+                                    <TextBlock Height="14"
+                                               Text="{Binding ElementName=textBoxEmployeeDirectLine,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontFamily="Segoe UI Semibold"
+                                               FontSize="10"
+                                               SnapsToDevicePixels="False"
+                                               Visibility="{Binding ElementName=checkBoxEmployeeDirectLine,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                </StackPanel>
+
+
+                                <!--/ Emp. Bracnh Address /-->
+                                <!--<Image Grid.Row="4" Grid.Column="0" Width="9.6" Height="9.6" Source="/Images/marker_2_Vector.png" />-->
+                                <Viewbox Grid.Row="5"
+                                         Grid.Column="0"
+                                         Width="12"
+                                         Height="12"
+                                         VerticalAlignment="Center"
+                                         Child="{StaticResource MapMarkerIcon}"
+                                         SnapsToDevicePixels="True" />
+                                <!--<Grid Grid.Row="5" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" Height="15" Text="{Binding ElementName=textBoxEmployeeAddressLine1,Path=Text}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="11" SnapsToDevicePixels="False" />
+                                    <TextBlock Grid.Row="1" Height="15" Text="{Binding ElementName=textBoxEmployeeAddressLine2,Path=Text}" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="11" SnapsToDevicePixels="False" />
+                                </Grid>-->
+                                <StackPanel Grid.Row="5"
+                                            Grid.Column="1"
+                                            Orientation="Vertical"
+                                            Margin="0,1"
+                                            SnapsToDevicePixels="False">
+                                    <TextBlock Height="14"
+                                               Text="{Binding ElementName=textBoxEmployeeAddressLine1,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontFamily="Segoe UI Semibold"
+                                               FontSize="10"
+                                               SnapsToDevicePixels="False" />
+                                    <TextBlock Height="14"
+                                               Text="{Binding ElementName=textBoxEmployeeAddressLine2,Path=Text}"
+                                               VerticalAlignment="Center"
+                                               FontFamily="Segoe UI Semibold"
+                                               FontSize="10"
+                                               SnapsToDevicePixels="False" />
+                                </StackPanel>
+
+
+                                <!--/ Emp. Email /-->
+                                <!--<Image Grid.Row="5" Grid.Column="0" Source="/Images/web2_2_Vector.png" />-->
+                                <Viewbox Grid.Row="6"
+                                         Grid.Column="0"
+                                         Width="12"
+                                         Height="12"
+                                         VerticalAlignment="Center"
+                                         Child="{StaticResource WorldWideWebIcon}"
+                                         SnapsToDevicePixels="True" />
+                                <!--<Canvas Width="10" Height="10">
+                                <Ellipse Canvas.Left="0" Canvas.Top="0" Width="10" Height="10" StrokeThickness=".8" Stroke="#FF7D2933" />
+                                <Ellipse Canvas.Left="2" Canvas.Top="0" Width="6" Height="10" StrokeThickness=".8" Stroke="#FF7D2933" />
+                                <Line X1="5" Y1="0.5" X2="5" Y2="9.5" StrokeThickness=".8" Stroke="#FF7D2933" />
+                                <Line X1="0.5" Y1="5" X2="9.5" Y2="5" StrokeThickness=".8" Stroke="#FF7D2933" />
+                                <Path Canvas.Left="0" Canvas.Top="0" Data="M 1,2.5 C 1,2.5 5,3.5 9,2.5" StrokeThickness=".8" Stroke="#FF7D2933" />
+                                <Path Canvas.Left="0" Canvas.Top="0" Data="M 1,7.5 C 1,7.5 5,6.5 9,7.5" StrokeThickness=".8" Stroke="#FF7D2933" />
+                            </Canvas>-->
+                                <!--</Viewbox>-->
+                                <TextBlock Grid.Row="6"
+                                           Grid.Column="1"
+                                           Height="14"
+                                           Text="www.hcsbank.com" 
+                                           VerticalAlignment="Center"
+                                           FontFamily="Segoe UI Semibold"
+                                           FontSize="10"
+                                           Margin="0,1"
+                                           SnapsToDevicePixels="False" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
