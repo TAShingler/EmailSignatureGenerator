@@ -14,12 +14,13 @@
         Background="#FFC8C8C8" >
 
     <Window.Resources>
-        <!--< Application Colors >-->
+        <!--#region < Application Colors >-->
         <SolidColorBrush x:Key="BusinessCardPrimaryColorBrush" Color="#FF7D2933" />
         <SolidColorBrush x:Key="BusinessCardSecondaryColorBrush" Color="#FFE0CAA1" />
         <SolidColorBrush x:Key="BusinessCardTertiaryColorBrush" Color="#FF000000" />
+        <!--#endregion < Application Colors >-->
 
-        <!--< AppLogo1 Resources >-->
+        <!--#region < AppLogo1 Resources >-->
         <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient28774" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
             <LinearGradientBrush.GradientStops>
                 <GradientStopCollection>
@@ -148,7 +149,8 @@
                 </GradientStopCollection>
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
-        <!--< AppLogo2 Resources >-->
+        <!--#endregion < AppLogo1 Resources >-->
+        <!--#region < AppLogo2 Resources >-->
         <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient1620" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
             <LinearGradientBrush.GradientStops>
                 <GradientStopCollection>
@@ -253,7 +255,8 @@
                 </GradientStopCollection>
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
-        <!--< AppLogo3 Resources >-->
+        <!--#endregion < AppLogo2 Resources >-->
+        <!--#region < AppLogo3 Resources >-->
         <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="linearGradient23595" MappingMode="RelativeToBoundingBox" StartPoint="0,0" EndPoint="1,1">
             <LinearGradientBrush.GradientStops>
                 <GradientStopCollection>
@@ -398,9 +401,9 @@
                 </GradientStopCollection>
             </LinearGradientBrush.GradientStops>
         </LinearGradientBrush>
+        <!--#endregion < AppLogo3 Resources >-->
 
-
-        <!--< Title Bar Icons >-->
+        <!--#region < Title Bar Icons >-->
         <Canvas x:Key="AppLogo1" x:Name="AppLogo1" Width="24" Height="24">
             <Canvas.RenderTransform>
                 <TranslateTransform X="0" Y="0"/>
@@ -602,8 +605,9 @@
         </Canvas>
         <Path x:Key="MinimizeButtonGlyphData" Width="10" Height="10" ClipToBounds="True" Data="M 0,5.5 H 10" Stroke="Black" StrokeThickness="1" />
         <Path x:Key="CloseButtonGlyphData" Width="10" Height="10" ClipToBounds="True" Data="M 0,0 10,10 M 0,10 10,0" Stroke="Black" StrokeThickness="1" />
+        <!--#endregion < Title Bar Icons >-->
 
-        <!--< Title Bar Button Styles >-->
+        <!--#region < Title Bar Button Styles >-->
         <Style x:Key="ButtonFocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -695,16 +699,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--#endregion < Title Bar Button Styles >-->
 
-        <!--< Converters >-->
+        <!--#region < Converters >-->
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <local:AppendPhoneExtensionConverter x:Key="AppendPhoneExtensionConverter" />
         <local:StringToSvgImageConverter x:Key="StringToSvgImageConverter" />
         <local:StringToPngImageConverter x:Key="StringToPngImageConverter" />
         <local:SourceToVisibilityConverter x:Key="SourceToVisibilityConverter" />
         <local:SourceToVisibilityAsStringConverter x:Key="SourceToVisibilityAsStringConverter" />
+        <!--#endregion < Converters >-->
 
-        <!--< Business Card Icons >-->
+        <!--#region < Business Card Icons >-->
         <Canvas x:Key="HcsbLogo" Width="24" Height="24">
             <Canvas.RenderTransform>
                 <MatrixTransform Matrix="0.15741286 0 0 0.15759511 -3.2690473 -3.4474106"/>
@@ -1586,13 +1592,19 @@
                 </Canvas>
             </Canvas>
         </Canvas>
+        <!--#endregion < Business Card Icons >-->
     </Window.Resources>
 
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="24" ResizeBorderThickness="7" UseAeroCaptionButtons="True" GlassFrameThickness="7" />
+        <WindowChrome CaptionHeight="24"
+                      ResizeBorderThickness="7"
+                      UseAeroCaptionButtons="True"
+                      GlassFrameThickness="7" />
     </WindowChrome.WindowChrome>
 
-    <Border x:Name="windowMainBorder" BorderBrush="DimGray" BorderThickness="1">
+    <Border x:Name="windowMainBorder"
+            BorderBrush="DimGray"
+            BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
@@ -1601,44 +1613,70 @@
             </Grid.RowDefinitions>
 
             <!--/ Title Bar /-->
-            <Grid Grid.Row="0" Background="#FFA0A0A0">
+            <Grid Grid.Row="0"
+                  Background="#FFA0A0A0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="32" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
-                    <!--<ColumnDefinition Width="48" />-->
                 </Grid.ColumnDefinitions>
 
-                <Viewbox Grid.Column="0" Width="16" Height="16" Child="{StaticResource AppLogo1}" />
-                <!--<Canvas Width="24" Height="24" Background="green" />-->
+                <Viewbox Grid.Column="0"
+                         Width="16"
+                         Height="16"
+                         Child="{StaticResource AppLogo1}" />
 
-
-                <Menu Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Center" Background="Transparent" Visibility="Collapsed">
+                <Menu Grid.Column="1"
+                      WindowChrome.IsHitTestVisibleInChrome="True"
+                      VerticalAlignment="Center"
+                      Background="Transparent"
+                      Visibility="Collapsed">
                     <MenuItem Header="File" />
                     <MenuItem Header="Edit" />
                 </Menu>
-                <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="App Title" />
-                <Button x:Name="btnMinimizeWindow" Grid.Column="3" WindowChrome.IsHitTestVisibleInChrome="True" Background="Transparent" Style="{StaticResource TitleBarButtonMinimizeWindowStyle}" Click="btnMinimizeWindow_Click" />
-                <!--<Button Grid.Column="4" WindowChrome.IsHitTestVisibleInChrome="False" Content="Max" Background="Transparent" BorderThickness="0" />-->
-                <!--<Button Grid.Column="4" WindowChrome.IsHitTestVisibleInChrome="False" Content="RstDwn" Visibility="Collapsed" />-->
-                <Button x:Name="btnCloseApplication" Grid.Column="4" WindowChrome.IsHitTestVisibleInChrome="True" Background="Transparent" Style="{StaticResource TitleBarButtonCloseAppStyle}" Click="btnCloseApplication_Click"/>
+                
+                <TextBlock Grid.Column="2"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Text="App Title" />
+                <Button x:Name="btnMinimizeWindow"
+                        Grid.Column="3"
+                        WindowChrome.IsHitTestVisibleInChrome="True"
+                        Background="Transparent"
+                        Style="{StaticResource TitleBarButtonMinimizeWindowStyle}"
+                        Click="btnMinimizeWindow_Click" />
+                <Button x:Name="btnCloseApplication"
+                        Grid.Column="4"
+                        WindowChrome.IsHitTestVisibleInChrome="True"
+                        Background="Transparent"
+                        Style="{StaticResource TitleBarButtonCloseAppStyle}"
+                        Click="btnCloseApplication_Click"/>
             </Grid>
 
             <!--/ Ribbon /-->
-            <TextBlock Grid.Row="1" Height="1" Background="DimGray" Width="auto" />
+            <TextBlock Grid.Row="1"
+                       Height="1"
+                       Background="DimGray"
+                       Width="auto" />
 
             <!--/ Body /-->
-            <Grid Grid.Row="2" Background="Transparent">
+            <Grid Grid.Row="2"
+                  Background="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-                    <RowDefinition MinHeight="192" Height="240" MaxHeight="240" />
+                    <RowDefinition MinHeight="192"
+                                   Height="240"
+                                   MaxHeight="240" />
                 </Grid.RowDefinitions>
 
                 <!--/ Form for Input /-->
-                <Border BorderBrush="DarkGray" BorderThickness="0,0,0,1">
-                    <ScrollViewer Padding="8" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <Border BorderBrush="DarkGray"
+                        BorderThickness="0,0,0,1">
+                    <ScrollViewer Padding="8"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Auto">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -1665,53 +1703,160 @@
                                 </Grid.RowDefinitions>
 
                                 <!--/ Left-Side Image /-->
-                                <Label x:Name="lblImageSource" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Logo Image:" Padding="5,0" />
-                                <TextBox x:Name="textBoxImageSource" IsEnabled="True" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Height="20" />
-                                <Button x:Name="btnImageSource" IsEnabled="True" Grid.Row="0" Grid.Column="3" Margin="2" Padding="0" BorderBrush="#FFABADB3" HorizontalAlignment="Left" Width="20" Click="btnImageSource_Click">
-                                    <Viewbox Width="18" Height="18" Stretch="None">
-                                        <Canvas Width="8" Height="4">
-                                            <Polyline Canvas.Left="0" Canvas.Top="0" Points="0,4 4,0 8,4" Fill="#121212" />
+                                <Label x:Name="lblImageSource"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Logo Image:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxImageSource"
+                                         IsEnabled="True"
+                                         Grid.Row="0"
+                                         Grid.Column="2"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
+                                <Button x:Name="btnImageSource"
+                                        IsEnabled="True"
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                        Margin="2"
+                                        Padding="0"
+                                        BorderBrush="#FFABADB3"
+                                        HorizontalAlignment="Left"
+                                        Width="20"
+                                        Click="btnImageSource_Click">
+                                    <Viewbox Width="18"
+                                             Height="18"
+                                             Stretch="None">
+                                        <Canvas Width="8"
+                                                Height="4">
+                                            <Polyline Canvas.Left="0"
+                                                      Canvas.Top="0"
+                                                      Points="0,4 4,0 8,4"
+                                                      Fill="#121212" />
                                         </Canvas>
                                     </Viewbox>
                                 </Button>
 
-                                <!--/ File Type /-->
-                                <!--<Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Content="Image File Type:" Padding="5,0" />
-                                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
-                                    <RadioButton x:Name="radioButtonSvg" Content="SVG" VerticalAlignment="Center" Margin="0,0,16,0" GroupName="RadioButtonGroupFileTypes" />
-                                    <RadioButton x:Name="radioButtonPng" Content="PNG" VerticalAlignment="Center" Margin="0,0,16,0" GroupName="RadioButtonGroupFileTypes" />
-                                </StackPanel>-->
-
                                 <!--/ Emp. Name /-->
-                                <Label x:Name="lblEmployeeName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Content="Employee Name:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeName" IsEnabled="True" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Height="20" />
+                                <Label x:Name="lblEmployeeName"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Employee Name:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeName"
+                                         IsEnabled="True"
+                                         Grid.Row="1"
+                                         Grid.Column="2"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Emp. Title /-->
-                                <Label x:Name="lblEmployeeTitle" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Content="Employee Title:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeTitle" Grid.Row="2" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" Text="" />
+                                <Label x:Name="lblEmployeeTitle"
+                                       Grid.Row="2"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Employee Title:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeTitle"
+                                         Grid.Row="2"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20"
+                                         Text="" />
 
                                 <!--/ Emp. Certs/NMLS/etc. /-->
-                                <CheckBox x:Name="checkBoxEmployeeCredentials" Grid.Row="3" Grid.Column="0" IsEnabled="True" VerticalAlignment="Center" Width="16" Height="16" />
-                                <Label x:Name="lblEmployeeCredentials" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Content="NMLS/Certs/Etc.:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeCredentials" Grid.Row="3" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <CheckBox x:Name="checkBoxEmployeeCredentials"
+                                          Grid.Row="3"
+                                          Grid.Column="0"
+                                          IsEnabled="True"
+                                          VerticalAlignment="Center"
+                                          Width="16"
+                                          Height="16" />
+                                <Label x:Name="lblEmployeeCredentials"
+                                       Grid.Row="3"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="NMLS/Certs/Etc.:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeCredentials"
+                                         Grid.Row="3"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Emp. Email /-->
-                                <Label x:Name="lblEmployeeEmail" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Content="Employee Email:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeEmail" Grid.Row="4" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <Label x:Name="lblEmployeeEmail"
+                                       Grid.Row="4"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Employee Email:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeEmail"
+                                         Grid.Row="4"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Phone number /-->
-                                <Label x:Name="lblEmployeePhone" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Content="Branch Phone Number:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeePhone" Grid.Row="5" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <Label x:Name="lblEmployeePhone"
+                                       Grid.Row="5"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Branch Phone Number:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeePhone"
+                                         Grid.Row="5"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Phone Number Extension /-->
-                                <CheckBox x:Name="checkBoxEmployeeExtension" Grid.Row="6" Grid.Column="0" IsEnabled="True" VerticalAlignment="Center" Width="16" Height="16" />
-                                <Label x:Name="lblEmployeeExtension" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Content="Employee Extension" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeExtension" Grid.Row="6" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <CheckBox x:Name="checkBoxEmployeeExtension"
+                                          Grid.Row="6"
+                                          Grid.Column="0"
+                                          IsEnabled="True"
+                                          VerticalAlignment="Center"
+                                          Width="16"
+                                          Height="16" />
+                                <Label x:Name="lblEmployeeExtension"
+                                       Grid.Row="6"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Employee Extension"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeExtension"
+                                         Grid.Row="6"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Direct Phone Number /-->
-                                <CheckBox x:Name="checkBoxEmployeeDirectLine" Grid.Row="7" Grid.Column="0" IsEnabled="True" VerticalAlignment="Center" Width="16" Height="16" />
-                                <Label x:Name="lblEmployeeDirectLine" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Content="Direct Line:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeDirectLine" Grid.Row="7" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <CheckBox x:Name="checkBoxEmployeeDirectLine"
+                                          Grid.Row="7"
+                                          Grid.Column="0"
+                                          IsEnabled="True"
+                                          VerticalAlignment="Center"
+                                          Width="16"
+                                          Height="16" />
+                                <Label x:Name="lblEmployeeDirectLine"
+                                       Grid.Row="7"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Direct Line:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeDirectLine"
+                                         Grid.Row="7"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
                             </Grid>
 
                             <!--/ Right Column /-->
@@ -1735,8 +1880,18 @@
                                 </Grid.RowDefinitions>
 
                                 <!--/ Address Line 1 /-->
-                                <Label x:Name="lblEmployeeAddressLine1" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Branch Address Line 1:" Padding="5,0" />
-                                <TextBox x:Name="textBoxEmployeeAddressLine1" Grid.Row="0" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <Label x:Name="lblEmployeeAddressLine1"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       VerticalAlignment="Center"
+                                       Content="Branch Address Line 1:"
+                                       Padding="5,0" />
+                                <TextBox x:Name="textBoxEmployeeAddressLine1"
+                                         Grid.Row="0"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Address Line 2 /-->
                                 <Label x:Name="lblEmployeeAddressLine2"
@@ -1765,53 +1920,77 @@
                                          IsEnabled="True"
                                          VerticalAlignment="Center"
                                          Height="20" />
+
                                 <!--/ Save Location /-->
-                                <!--<Label Grid.Row="10" Grid.Column="1" Content="Save to:" />
-                                <TextBox x:Name="textBoxSaveToPath" Grid.Row="10" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" IsReadOnly="True" />
-                                <Button x:Name="btnChooseSaveLocation" Grid.Row="10" Grid.Column="3" IsEnabled="True" Padding="0" Margin="2" BorderThickness="1" BorderBrush="#FFABADB3" ClipToBounds="True" Click="btnChooseSaveLocation_Click">
-                                    <Viewbox Width="18" Height="18" Stretch="None" >
-                                        <Canvas Width="8" Height="4">
-                                            <Path Data="M 0,4 L 4,0 L 8,4" Stroke="Black" />
-                                        </Canvas>
-                                    </Viewbox>
-                                </Button>-->
-                                <Label x:Name="lblSaveToPath" Grid.Row="4" Grid.Column="1" Content="Save to:" />
-                                <TextBox x:Name="textBoxSaveToPath" Grid.Row="4" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" IsReadOnly="True" />
-                                <Button x:Name="btnChooseSaveLocation" Grid.Row="4" Grid.Column="3" IsEnabled="True" Padding="0" Margin="2" BorderThickness="1" BorderBrush="#FFABADB3" ClipToBounds="True" Click="btnChooseSaveLocation_Click">
-                                    <Viewbox Width="18" Height="18" Stretch="None" >
-                                        <Canvas Width="8" Height="4">
-                                            <Path Data="M 0,4 L 4,0 L 8,4 Z" Fill="#121212" />
+                                <Label x:Name="lblSaveToPath"
+                                       Grid.Row="4"
+                                       Grid.Column="1"
+                                       Content="Save to:" />
+                                <TextBox x:Name="textBoxSaveToPath"
+                                         Grid.Row="4"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20"
+                                         IsReadOnly="True" />
+                                <Button x:Name="btnChooseSaveLocation"
+                                        Grid.Row="4"
+                                        Grid.Column="3"
+                                        IsEnabled="True"
+                                        Padding="0"
+                                        Margin="2"
+                                        BorderThickness="1"
+                                        BorderBrush="#FFABADB3"
+                                        ClipToBounds="True"
+                                        Click="btnChooseSaveLocation_Click">
+                                    <Viewbox Width="18"
+                                             Height="18"
+                                             Stretch="None" >
+                                        <Canvas Width="8"
+                                                Height="4">
+                                            <Path Data="M 0,4 L 4,0 L 8,4 Z"
+                                                  Fill="#121212" />
                                         </Canvas>
                                     </Viewbox>
                                 </Button>
 
                                 <!--/ Img Name /-->
-                                <Label x:Name="lblFileName" Grid.Row="5" Grid.Column="1" Content="File name:" />
-                                <TextBox x:Name="textBoxFileName" Grid.Row="5" Grid.Column="2" IsEnabled="True" VerticalAlignment="Center" Height="20" />
+                                <Label x:Name="lblFileName"
+                                       Grid.Row="5"
+                                       Grid.Column="1"
+                                       Content="File name:" />
+                                <TextBox x:Name="textBoxFileName"
+                                         Grid.Row="5"
+                                         Grid.Column="2"
+                                         IsEnabled="True"
+                                         VerticalAlignment="Center"
+                                         Height="20" />
 
                                 <!--/ Save Button /-->
-                                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4">
+                                <Grid Grid.Row="7"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="4">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="200" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Button x:Name="btnSavePng" Grid.Column="1" IsEnabled="True" Content="Save as PNG" Click="btnSavePng_Click" BorderBrush="#FFABADB3" />
+                                    
+                                    <Button x:Name="btnSavePng"
+                                            Grid.Column="1"
+                                            IsEnabled="True"
+                                            Content="Save as PNG"
+                                            Click="btnSavePng_Click"
+                                            BorderBrush="#FFABADB3" />
                                 </Grid>
-
-                                <!--<Button x:Name="btnColorChooser" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="7" Content="Click for New Color" Click="btnColorChooser_Click" />-->
                             </Grid>
-
-
-
-                            <!--/ Save Button /-->
-                            <!--<Button x:Name="btnSavePng" IsEnabled="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Save as PNG" Margin="128,0" Click="btnSavePng_Click" BorderBrush="#FFABADB3" />-->
                         </Grid>
                     </ScrollViewer>
                 </Border>
 
                 <!--/ Business Card View /-->
-                <Grid Grid.Row="1" SnapsToDevicePixels="True">
+                <Grid Grid.Row="1"
+                      SnapsToDevicePixels="True">
                     <Grid MinWidth="350"
                           Width="Auto"
                           MaxWidth="650"
@@ -1821,24 +2000,39 @@
                           VerticalAlignment="Center"
                           HorizontalAlignment="Center">
                         <Canvas x:Name="canvasBusinessCardShadow"
-                                MinWidth="{Binding MinWidth, ElementName=businessCardOuterGrid}"
-                                Width="{Binding Width, ElementName=businessCardOuterGrid}" 
-                                MaxWidth="{Binding MaxWidth, ElementName=businessCardOuterGrid}"
-                                MinHeight="{Binding MinHeight, ElementName=businessCardOuterGrid}"
-                                Height="{Binding Height, ElementName=businessCardOuterGrid}"
-                                MaxHeight="{Binding MaxHeight, ElementName=businessCardOuterGrid}"
-                                HorizontalAlignment="{Binding HorizontalAlignment, ElementName=businessCardOuterGrid}" 
-                                VerticalAlignment="{Binding VerticalAlignment, ElementName=businessCardOuterGrid}">
+                                MinWidth="{Binding MinWidth,
+                                                   ElementName=businessCardOuterGrid}"
+                                Width="{Binding Width,
+                                                ElementName=businessCardOuterGrid}" 
+                                MaxWidth="{Binding MaxWidth,
+                                                   ElementName=businessCardOuterGrid}"
+                                MinHeight="{Binding MinHeight,
+                                                    ElementName=businessCardOuterGrid}"
+                                Height="{Binding Height,
+                                                 ElementName=businessCardOuterGrid}"
+                                MaxHeight="{Binding MaxHeight,
+                                                    ElementName=businessCardOuterGrid}"
+                                HorizontalAlignment="{Binding HorizontalAlignment,
+                                                              ElementName=businessCardOuterGrid}" 
+                                VerticalAlignment="{Binding VerticalAlignment,
+                                                            ElementName=businessCardOuterGrid}">
                             <Rectangle Fill="Gray"
                                        Canvas.Left="2"
                                        Canvas.Top="2"
-                                       MinWidth="{Binding MinWidth, ElementName=canvasBusinessCardShadow}"
-                                       Width="{Binding ActualWidth, ElementName=canvasBusinessCardShadow}" 
-                                       MaxWidth="{Binding MaxWidth, ElementName=canvasBusinessCardShadow}"
-                                       MinHeight="{Binding MinHeight, ElementName=canvasBusinessCardShadow}"
-                                       Height="{Binding ActualHeight, ElementName=canvasBusinessCardShadow}"
-                                       MaxHeight="{Binding MaxHeight, ElementName=canvasBusinessCardShadow}" />
+                                       MinWidth="{Binding MinWidth,
+                                                          ElementName=canvasBusinessCardShadow}"
+                                       Width="{Binding ActualWidth,
+                                                          ElementName=canvasBusinessCardShadow}" 
+                                       MaxWidth="{Binding MaxWidth,
+                                                          ElementName=canvasBusinessCardShadow}"
+                                       MinHeight="{Binding MinHeight,
+                                                          ElementName=canvasBusinessCardShadow}"
+                                       Height="{Binding ActualHeight,
+                                                          ElementName=canvasBusinessCardShadow}"
+                                       MaxHeight="{Binding MaxHeight,
+                                                          ElementName=canvasBusinessCardShadow}" />
                         </Canvas>
+                        
                         <Grid x:Name="businessCardOuterGrid"
                               MinWidth="350"
                               Width="Auto"
@@ -1849,15 +2043,14 @@
                               VerticalAlignment="Stretch"
                               HorizontalAlignment="Stretch"
                               Background="White">
-                            <Grid Margin="8" SnapsToDevicePixels="True">
+                            <Grid Margin="8"
+                                  SnapsToDevicePixels="True">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="96" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-
-                                <!--<Viewbox x:Name="viewboxIcon" Grid.Column="0" Width="12" Height="12" Child="{StaticResource MobilePhoneIcon2}" SnapsToDevicePixels="False" />-->
-                                <!--<Canvas x:Name="canvasIcon" />-->
+                                
                                 <Image Visibility="{Binding ElementName=imageNonSvgIcon,
                                                             Path=Source,
                                                             Converter={StaticResource SourceToVisibilityConverter}}" 
@@ -1885,146 +2078,174 @@
                                               MaxHeight="96"
                                               VerticalContentAlignment="Center" 
                                               HorizontalContentAlignment="Center" 
-                                              FileSource="{Binding ElementName=textBoxImageSource,Path=Text,Converter={StaticResource StringToSvgImageConverter}}" />
-                                <!--<svg:SVGImage.FileSource>
-                                        <MultiBinding Converter="{StaticResource StringToImageConverter}">
-                                            <Binding ElementName="radioButtonSvg" Path="IsChecked" />
-                                            <Binding ElementName="textBoxImageSource" Path="Text" />
-                                        </MultiBinding>
-                                    </svg:SVGImage.FileSource>
-                                </svg:SVGImage>-->
-                                <!--FileSource="{Binding ElementName=textBoxImageSource,Path=Text,Converter=StringToImageConverter}" />-->
-                                <Rectangle Grid.Column="1" Width="2" Fill="{DynamicResource BusinessCardPrimaryColorBrush}" Margin="12,0,12,0" SnapsToDevicePixels="True" />
-                                <Grid Grid.Column="2" SnapsToDevicePixels="True" Margin="0,8">
+                                              FileSource="{Binding ElementName=textBoxImageSource,
+                                                                   Path=Text,
+                                                                   Converter={StaticResource StringToSvgImageConverter}}" />
+                                <Rectangle Grid.Column="1"
+                                           Width="2"
+                                           Fill="{DynamicResource BusinessCardPrimaryColorBrush}"
+                                           Margin="12,0,12,0"
+                                           SnapsToDevicePixels="True" />
+                                <Grid Grid.Column="2"
+                                      SnapsToDevicePixels="True"
+                                      Margin="0,8">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition MinHeight="12" Height="12" MaxHeight="12" />
+                                        <RowDefinition MinHeight="12"
+                                                       Height="12"
+                                                       MaxHeight="12" />
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition MinHeight="4" Height="4" MaxHeight="4" />
+                                        <RowDefinition MinHeight="4"
+                                                       Height="4"
+                                                       MaxHeight="4" />
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition MinHeight="4" Height="4" MaxHeight="4" />
+                                        <RowDefinition MinHeight="4"
+                                                       Height="4"
+                                                       MaxHeight="4" />
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition MinHeight="4" Height="4" MaxHeight="4" />
+                                        <RowDefinition MinHeight="4"
+                                                       Height="4"
+                                                       MaxHeight="4" />
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition MinWidth="24" Width="24" MaxWidth="24" />
+                                        <ColumnDefinition MinWidth="24"
+                                                          Width="24"
+                                                          MaxWidth="24" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
                                     <!--/ Employee Name and Credentials /-->
-                                    <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Vertical">
+                                    <StackPanel Grid.Row="0"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                Orientation="Vertical">
                                         <TextBlock Height="24"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeName}"
+                                               Text="{Binding Text,
+                                                              ElementName=textBoxEmployeeName}"
                                                FontSize="16.8"
                                                FontWeight="Bold"
                                                FontFamily="Segoe UI"
                                                Foreground="{DynamicResource BusinessCardPrimaryColorBrush}" />
                                         <TextBlock Height="16"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeTitle}"
+                                               Text="{Binding Text,
+                                                              ElementName=textBoxEmployeeTitle}"
                                                FontSize="12"
                                                FontWeight="Normal"
                                                FontFamily="Segoe UI Semibold" />
                                         <TextBlock Height="14"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeCredentials}" 
+                                               Text="{Binding Text,
+                                                              ElementName=textBoxEmployeeCredentials}" 
                                                FontSize="10"
                                                FontWeight="Normal"
                                                FontFamily="Segoe UI"
-                                               Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=checkBoxEmployeeCredentials}" />
+                                               Visibility="{Binding IsChecked,
+                                                                    Converter={StaticResource BooleanToVisibilityConverter},
+                                                                    ElementName=checkBoxEmployeeCredentials}" />
                                     </StackPanel>
 
                                     <!--/ Employee Email /-->
                                     <Viewbox Grid.Row="2"
-                                         Grid.Column="0"
-                                         Width="12"
-                                         Height="12"
-                                         VerticalAlignment="Center"
-                                         Child="{StaticResource EmailIcon1}"
-                                         SnapsToDevicePixels="True" />
-                                    <TextBlock x:Name="textBlockEmployeeEmail" Grid.Row="2"
-                                           Grid.Column="1"
-                                           Height="14"
-                                           Text="{Binding Text, ElementName=textBoxEmployeeEmail}"
-                                           VerticalAlignment="Center"
-                                           FontFamily="Segoe UI"
-                                           FontSize="10"
-                                           Margin="0" />
-
-                                    <!--/ Employee Phone /-->
-                                    <Viewbox Grid.Row="4"
-                                         Grid.Column="0"
-                                         Width="12"
-                                         Height="12"
-                                         VerticalAlignment="Center"
-                                         Child="{StaticResource PhoneIcon}"
-                                         SnapsToDevicePixels="True" />
-                                    <StackPanel Grid.Row="4"
-                                            Grid.Column="1"
-                                            Orientation="Vertical"
-                                            Margin="0">
-                                        <TextBlock Height="14"
-                                               VerticalAlignment="Center"
-                                               FontFamily="Segoe UI"
-                                               FontSize="10">
-                                            <TextBlock.Text>
-                                                <MultiBinding Converter="{StaticResource AppendPhoneExtensionConverter}">
-                                                    <Binding ElementName="textBoxEmployeePhone" Path="Text" />
-                                                    <Binding ElementName="textBoxEmployeeExtension" Path="Text" />
-                                                    <Binding ElementName="checkBoxEmployeeExtension" Path="IsChecked" />
-                                                </MultiBinding>
-                                            </TextBlock.Text>
-                                        </TextBlock>
-                                        <!--Text="{Binding ElementName=textBoxEmployeePhone,Path=Text,Converter={StaticResource}}"-->
-                                        <TextBlock Height="14"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeDirectLine}"
+                                             Grid.Column="0"
+                                             Width="12"
+                                             Height="12"
+                                             VerticalAlignment="Center"
+                                             Child="{StaticResource EmailIcon1}"
+                                             SnapsToDevicePixels="True" />
+                                    <TextBlock x:Name="textBlockEmployeeEmail"
+                                               Grid.Row="2"
+                                               Grid.Column="1"
+                                               Height="14"
+                                               Text="{Binding Text,
+                                                              ElementName=textBoxEmployeeEmail}"
                                                VerticalAlignment="Center"
                                                FontFamily="Segoe UI"
                                                FontSize="10"
-                                               Visibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=checkBoxEmployeeDirectLine}" />
+                                               Margin="0" />
+
+                                    <!--/ Employee Phone /-->
+                                    <Viewbox Grid.Row="4"
+                                             Grid.Column="0"
+                                             Width="12"
+                                             Height="12"
+                                             VerticalAlignment="Center"
+                                             Child="{StaticResource PhoneIcon}"
+                                             SnapsToDevicePixels="True" />
+                                    <StackPanel Grid.Row="4"
+                                                Grid.Column="1"
+                                                Orientation="Vertical"
+                                                Margin="0">
+                                        <TextBlock Height="14"
+                                                   VerticalAlignment="Center"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="10">
+                                            <TextBlock.Text>
+                                                <MultiBinding Converter="{StaticResource AppendPhoneExtensionConverter}">
+                                                    <Binding ElementName="textBoxEmployeePhone"
+                                                             Path="Text" />
+                                                    <Binding ElementName="textBoxEmployeeExtension"
+                                                             Path="Text" />
+                                                    <Binding ElementName="checkBoxEmployeeExtension"
+                                                             Path="IsChecked" />
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        
+                                        <TextBlock Height="14"
+                                                   Text="{Binding Text,
+                                                                  ElementName=textBoxEmployeeDirectLine}"
+                                                   VerticalAlignment="Center"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="10"
+                                                   Visibility="{Binding IsChecked,
+                                                                        Converter={StaticResource BooleanToVisibilityConverter},
+                                                                        ElementName=checkBoxEmployeeDirectLine}" />
                                     </StackPanel>
 
                                     <!--/ Employee Address /-->
                                     <Viewbox Grid.Row="6"
-                                         Grid.Column="0"
-                                         Width="12"
-                                         Height="12"
-                                         VerticalAlignment="Center"
-                                         Child="{StaticResource MapMarkerIcon}"
-                                         SnapsToDevicePixels="True" />
+                                             Grid.Column="0"
+                                             Width="12"
+                                             Height="12"
+                                             VerticalAlignment="Center"
+                                             Child="{StaticResource MapMarkerIcon}"
+                                             SnapsToDevicePixels="True" />
                                     <StackPanel Grid.Row="6"
-                                            Grid.Column="1"
-                                            Orientation="Vertical"
-                                            Margin="0"
-                                            SnapsToDevicePixels="False">
+                                                Grid.Column="1"
+                                                Orientation="Vertical"
+                                                Margin="0"
+                                                SnapsToDevicePixels="False">
                                         <TextBlock Height="14"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeAddressLine1}"
-                                               VerticalAlignment="Center"
-                                               FontFamily="Segoe UI"
-                                               FontSize="10" />
+                                                   Text="{Binding Text,
+                                                                  ElementName=textBoxEmployeeAddressLine1}"
+                                                   VerticalAlignment="Center"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="10" />
                                         <TextBlock Height="14"
-                                               Text="{Binding Text, ElementName=textBoxEmployeeAddressLine2}"
-                                               VerticalAlignment="Center"
-                                               FontFamily="Segoe UI"
-                                               FontSize="10" />
+                                                   Text="{Binding Text,
+                                                                  ElementName=textBoxEmployeeAddressLine2}"
+                                                   VerticalAlignment="Center"
+                                                   FontFamily="Segoe UI"
+                                                   FontSize="10" />
                                     </StackPanel>
 
                                     <!--/ Employee Email /-->
                                     <Viewbox Grid.Row="8"
-                                         Grid.Column="0"
-                                         Width="12"
-                                         Height="12"
-                                         VerticalAlignment="Center"
-                                         Child="{StaticResource WorldWideWebIcon}"
-                                         SnapsToDevicePixels="True" />
+                                             Grid.Column="0"
+                                             Width="12"
+                                             Height="12"
+                                             VerticalAlignment="Center"
+                                             Child="{StaticResource WorldWideWebIcon}"
+                                             SnapsToDevicePixels="True" />
                                     <TextBlock Grid.Row="8"
-                                           Grid.Column="1"
-                                           Height="14"
-                                           Text="{Binding ElementName=textBoxWebsite,
-                                                          Path=Text}" 
-                                           VerticalAlignment="Center"
-                                           FontFamily="Segoe UI"
-                                           FontSize="10"
-                                           Margin="0" />
+                                               Grid.Column="1"
+                                               Height="14"
+                                               Text="{Binding ElementName=textBoxWebsite,
+                                                              Path=Text}" 
+                                               VerticalAlignment="Center"
+                                               FontFamily="Segoe UI"
+                                               FontSize="10"
+                                               Margin="0" />
                                 </Grid>
                             </Grid>
                         </Grid>

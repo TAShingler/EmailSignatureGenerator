@@ -9,97 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+    <Page Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="HCSB_Logo_2-NEW.svg" />
-    <None Remove="Images\HCSB_Logo.svg" />
-    <None Remove="Images\logo_sig.png" />
-    <None Remove="Images\mail-icon-envelope-sign-vector-8395460.png" />
-    <None Remove="Images\mail-icon-envelope-sign-vector-8395460_2.png" />
-    <None Remove="Images\mail_2_Vector.png" />
-    <None Remove="Images\marker.png" />
-    <None Remove="Images\marker_2.png" />
-    <None Remove="Images\marker_2_Vector.png" />
-    <None Remove="Images\phone.png" />
-    <None Remove="Images\phone_2.png" />
-    <None Remove="Images\phone_2_Vector.png" />
-    <None Remove="Images\sig_address.png" />
-    <None Remove="Images\sig_emailico.png" />
-    <None Remove="Images\sig_phoneico.png" />
-    <None Remove="Images\sig_webico.png" />
-    <None Remove="Images\web2.png" />
-    <None Remove="Images\web2_2.png" />
-    <None Remove="Images\web2_2_Vector.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.SVGImage" Version="4.1.108" />
     <PackageReference Include="Svg" Version="3.4.4" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="HCSB_Logo_2-NEW.svg" />
-    <Resource Include="Images\HCSB_Logo.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\mail_2_Vector.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\marker_2_Vector.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\mail-icon-envelope-sign-vector-8395460_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\mail-icon-envelope-sign-vector-8395460.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\logo_sig.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\marker.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\marker_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\phone.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\phone_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\phone_2_Vector.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\sig_address.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\sig_emailico.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\sig_phoneico.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\sig_webico.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\web2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\web2_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\web2_2_Vector.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
 </Project>

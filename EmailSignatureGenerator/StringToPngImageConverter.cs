@@ -9,34 +9,32 @@ using System.Windows.Controls;
 
 namespace EmailSignatureGenerator;
 internal class StringToPngImageConverter : System.Windows.Data.IValueConverter {
+
+    /// <summary>
+    /// Validates file path string entered into textBoxImageSource on MainWindow.
+    /// </summary>
+    /// <param name="values">value passed to converter</param>
+    /// <param name="targetType">target type for output data</param>
+    /// <param name="parameter">converter parameter passed to converter</param>
+    /// <param name="culture">culture data passed to converter</param>
+    /// <returns>file path as string or null</returns>
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-        if (value is string) {
-            if (String.IsNullOrEmpty((string)value) == false) {
-                if (((string)value).Length > 0) {
-                    if (File.Exists((string)value)) {
-                        if (((string)value).EndsWith(@".png")) {
-                            //nonSvgImg.Visibility = System.Windows.Visibility.Visible;
+        if (value is not string)
+            return null;
 
-                            return (string)value;
-                        }
+        if (String.IsNullOrEmpty((string)value) == true)
+            return null;
 
-                        //if (((string)value).EndsWith(@".png")) {
-                        //    return (string)value;
-                        //}
-                    }
-                }
-            }
-        }
+        if (((string)value).Length <= 0)
+            return null;
 
-        //if (((string)value).EndsWith(@".svg")) {
-        //    return (string)value;
-        //}
+        if (File.Exists((string)value) == false)
+            return null;
 
-        //if (nonSvgImg != null) {
-        //    nonSvgImg.Visibility = System.Windows.Visibility.Collapsed;
-        //}
-        return null;
-        //throw new NotImplementedException();
+        if (((string)value).EndsWith(@".png") == false)
+            return null;
+
+        return (string)value;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {

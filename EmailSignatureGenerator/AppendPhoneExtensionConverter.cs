@@ -9,6 +9,14 @@ using System.Windows.Controls;
 
 namespace EmailSignatureGenerator;
 internal class AppendPhoneExtensionConverter : System.Windows.Data.IMultiValueConverter {
+    /// <summary>
+    /// Adds extension to phone number field if CheckBox is checked.
+    /// </summary>
+    /// <param name="values">values passed to converter</param>
+    /// <param name="targetType">target type for output data</param>
+    /// <param name="parameter">converter parameter passed to converter</param>
+    /// <param name="culture">culture data passed to converter</param>
+    /// <returns></returns>
     public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) {
         StringBuilder sb = new StringBuilder();
         
@@ -21,9 +29,6 @@ internal class AppendPhoneExtensionConverter : System.Windows.Data.IMultiValueCo
                 sb.Append(values[0]);
             }
         }
-        //foreach (var value in values) {
-        //    Debug.WriteLine(value.ToString() + " | " + value.GetType());
-        //}
 
         return sb.ToString();
     }

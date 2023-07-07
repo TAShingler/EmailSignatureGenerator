@@ -10,66 +10,33 @@ using System.Threading.Tasks;
 
 namespace EmailSignatureGenerator;
 internal class StringToSvgImageConverter : System.Windows.Data.IValueConverter {
-    //public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) {
-    //    foreach (var item in values) {
-    //        Debug.WriteLine(item.ToString());
-    //    }
-    //    //get string
 
-    //    //get file type from string
-
-    //    //update and display source based on file type
-
-    //    //throw new NotImplementedException();
-    //    if (((bool)values[0]) == true) {
-    //        if (((string)values[1]).Length > 0) {
-    //            //SvgImage svgImg = new SvgImage();
-    //            //Svg.SvgPathBuilder svgPathBuilder = new Svg.SvgPathBuilder();
-    //            //svgPathBuilder.ConvertFromString(values[1]);
-    //            return (string)values[1];
-    //        } else {
-    //            return null;
-    //        }
-    //    } else {
-    //        return null;
-    //    }
-    //}
-
+    /// <summary>
+    /// Validates file path string entered into textBoxImageSource on MainWindow.
+    /// </summary>
+    /// <param name="values">value passed to converter</param>
+    /// <param name="targetType">target type for output data</param>
+    /// <param name="parameter">converter parameter passed to converter</param>
+    /// <param name="culture">culture data passed to converter</param>
+    /// <returns>file path as string or null</returns>
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-        //var svgImg = App.Current.MainWindow.FindName("imageSvgIcon") as SvgImage;
+        if (value is not string)
+            return null;
 
-        if (value is string) {
-            if (String.IsNullOrEmpty((string)value) == false) {
-                if (((string)value).Length > 0) {
-                    if (File.Exists((string)value)) {
-                        if (((string)value).EndsWith(@".svg")) {
-                            //svgImg.Visibility = System.Windows.Visibility.Visible.ToString();
+        if (String.IsNullOrEmpty((string)value) == true)
+            return null;
 
-                            return (string)value;
-                        }
+        if (((string)value).Length <= 0)
+            return null;
 
-                        //if (((string)value).EndsWith(@".png")) {
-                        //    return (string)value;
-                        //}
-                    }
-                }
-            }
-        }
+        if (File.Exists((string)value) == false)
+            return null;
 
-        //if (((string)value).EndsWith(@".svg")) {
-        //    return (string)value;
-        //}
+        if (((string)value).EndsWith(@".svg") == false)
+            return null;
 
-        //if (svgImg != null) {
-        //    svgImg.Visibility = System.Windows.Visibility.Collapsed.ToString();
-        //}
-        return null;
-        //throw new NotImplementedException();
+        return (string)value;
     }
-
-    //public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) {
-    //    throw new NotImplementedException();
-    //}
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
         throw new NotImplementedException();

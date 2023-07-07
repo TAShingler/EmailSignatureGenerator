@@ -13,6 +13,15 @@ internal class BooleanToVisibilityConverter : IValueConverter {
         get; set;
     }
 
+    /// <summary>
+    /// Toggles control Visibility from Visible to Collapsed and vice versa.
+    /// </summary>
+    /// <param name="values">value passed to converter</param>
+    /// <param name="targetType">target type for output data</param>
+    /// <param name="parameter">converter parameter passed to converter</param>
+    /// <param name="culture">culture data passed to converter</param>
+    /// <returns>System.Windows.Visibilty.Visible or System.Windows.Visibility.Collapsed</returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
         if (targetType == typeof(Visibility)) {
             var visible = System.Convert.ToBoolean(value, culture);
@@ -28,7 +37,6 @@ internal class BooleanToVisibilityConverter : IValueConverter {
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-        //throw new NotImplementedException();
         throw new InvalidOperationException("Converter cannot convert back.");
     }
 }
